@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./ball.scss";
-import cs from 'classnames'
+import cs from 'classnames';
+import { Button } from 'antd';
 
 export default class Ball extends Component {
   constructor(){
@@ -69,6 +70,11 @@ export default class Ball extends Component {
         <button onClick={()=>{
           this.props.add()
         }}>修改父亲值</button>
+
+        <Button type="primary">Primary</Button>
+        <Button>Default</Button>
+        <Button type="dashed">Dashed</Button>
+        <Button type="link">Link</Button>
       </div>
     );
   }
