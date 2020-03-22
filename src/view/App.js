@@ -9,9 +9,15 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
+      a: 111,
       img: 1,
       btn: 'btn1'
     };
+  }
+  add(){
+    this.setState({
+      a: this.state.a + 1
+    })
   }
   render() {
     const { btn, img } = this.state
@@ -47,7 +53,7 @@ export default class App extends Component {
         />
         <Color />
         <List />
-        <Ball />
+        <Ball a={this.state.a} add={this.add.bind(this)}/>
       </div>
     );
   }
