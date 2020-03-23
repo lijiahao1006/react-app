@@ -3,6 +3,7 @@ import "./App.scss";
 import Color from './components/Color.js';
 import List from './components/List.js';
 import Ball from './components/Ball.js';
+import Ta from './components/Table.js'
 import cs from 'classnames';
 
 export default class App extends Component {
@@ -54,6 +55,7 @@ export default class App extends Component {
         <Color />
         <List />
         <Ball a={this.state.a} add={this.add.bind(this)}/>
+        <Ta />
       </div>
     );
   }
