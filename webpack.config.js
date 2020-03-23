@@ -1,3 +1,8 @@
+// 进度条
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+// 百分比颜色
+const chalk = require('chalk');
+
 module.exports = {
   entry: "./src/main.js",
   output: {
@@ -38,4 +43,11 @@ module.exports = {
     hot:true
   },
   devtool: 'inline-source-map',
+  plugins: [
+    new ProgressBarPlugin({
+      format: '  build [:bar] ' + chalk.cyan.bold('  :percent') + chalk.green.bold('  :elapsed seconds'),
+      clear: false,
+      complete: '#'
+    }),
+  ]
 };

@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import "./App.scss";
-import Color from './components/Color.js';
-import List from './components/List.js';
-import Ball from './components/Ball.js';
-import Ta from './components/Table.js'
+import Color from './components/Color';
+import List from './components/List';
+import Ball from './components/Ball';
+import Ta from './components/Table';
+import Check from './components/Check'
 import cs from 'classnames';
 
 export default class App extends Component {
@@ -12,16 +13,12 @@ export default class App extends Component {
     this.state = {
       a: 111,
       img: 1,
-      btn: 'btn1'
+      btn: 'btn1',
+      Acolor: []
     };
   }
-  add(){
-    this.setState({
-      a: this.state.a + 1
-    })
-  }
   render() {
-    const { btn, img } = this.state
+    const { btn, img, Acolor } = this.state
     return (
       <div className="box">
         <h1>hello my is{img}</h1>
@@ -54,8 +51,19 @@ export default class App extends Component {
         />
         <Color />
         <List />
-        <Ball a={this.state.a} add={this.add.bind(this)}/>
-        <Ta />
+        <Ball a={this.state.a} add={()=>{
+              this.setState({
+                a: this.state.a + 1
+              })
+        }}/>
+        <Ta color={ Acolor }/>
+        <Check
+          changeVal={(val) => {
+            this.setState({
+              Acolor: val
+            })
+          }}
+        />
       </div>
     );
   }
