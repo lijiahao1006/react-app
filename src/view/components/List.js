@@ -45,8 +45,9 @@ export default class List extends Component {
                 <li key={index}>
                   {item}
                   <button onClick={() => {
+                     arr.splice(index,1)
                     this.setState({
-                      arr: arr.filter((_item, idx) => idx !== index)
+                      arr
                     })
                   }}
                   >删除</button>
