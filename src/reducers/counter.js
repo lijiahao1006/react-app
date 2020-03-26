@@ -16,9 +16,9 @@ export default (state = initialState, { type }) => {
   // return state;
   switch (type) {
     case "add":
-      return { a: state.a + 2 };
+      return {'a': state.a + 2 };
     case "cheng":
-      return { b: state.b * 10 };
+      return {'b': state.b * 10 };
 
     default:
       return state;
