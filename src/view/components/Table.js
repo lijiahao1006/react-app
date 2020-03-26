@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Table } from "antd";
 import axios from "axios";
+import { connect } from 'react-redux';
+
 
 const columns = [
   {
@@ -35,7 +37,7 @@ const columns = [
     key: "color"
   }
 ];
-export default class Ta extends Component {
+class Ta extends Component {
   constructor() {
     super();
     this.state = {
@@ -101,7 +103,19 @@ export default class Ta extends Component {
           title={() => <h1>汽车筛选器</h1>}
         />
         { this.props.color }
+        <h1>{this.props.b}</h1>
+        <button onClick={() => {
+          this.props.dispatch({'type':'cheng'})
+        }}>++++</button>
       </div>
     );
   }
 }
+export default connect(
+  (state) => ({
+    b: state.counter.b
+  }),
+  dispatch => ({
+    dispatch
+  })
+)(Ta)

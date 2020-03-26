@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
 import "./App.scss";
 import Color from './components/Color';
 import List from './components/List';
@@ -7,7 +8,7 @@ import Ta from './components/Table';
 import Check from './components/Check'
 import cs from 'classnames';
 
-export default class App extends Component {
+class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -21,7 +22,8 @@ export default class App extends Component {
     const { btn, img, Acolor } = this.state
     return (
       <div className="box">
-        <h1>hello my is{img}</h1>
+        <h1>hello {this.props.a}</h1>
+        <button onClick={() => this.props.dispatch({'type':'add'})}>++redux</button>
         <button
           className={cs({
             'handleBtn': btn === 'btn1'
@@ -68,3 +70,11 @@ export default class App extends Component {
     );
   }
 }
+export default connect(
+  (state) => ({
+    a: state.counter.a
+  }),
+  dispatch => ({
+    dispatch
+  })
+)(App)

@@ -11,6 +11,8 @@ export default class List extends Component {
   render() {
     const { a, arr } = this.state;
     return (
+      // (.header+.navigation>.tab*5>{number $})+.footer>.title+.content
+    // .title>ul>(li.hhh>lorem3)*4
       <div>
         {/* 双向绑定input方法
         <input value={ a } onChange={e => {
