@@ -12,10 +12,18 @@ const element = <App />;
 
 // console.log(store.getState().counter.a)
 
-
 ReactDom.render(
     <Provider store={store}>
       {element}
     </Provider>,
     document.getElementById('app')
 )
+
+
+var foo = 42;
+function test() {
+    // 局部作用域
+    var foo = 21;
+}
+test();
+console.log(foo); // 21

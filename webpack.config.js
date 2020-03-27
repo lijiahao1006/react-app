@@ -45,7 +45,7 @@ module.exports = {
   devtool: 'inline-source-map',
   plugins: [
     new ProgressBarPlugin({
-      format: '  build [:bar] ' + chalk.cyan.bold('  :percent') + chalk.green.bold('  :elapsed seconds'),
+      format: '  build [:bar] ' + chalk.cyan.bold('  :percent') + chalk.red.bold('  :elapsed seconds'),
       clear: false,
       complete: '#'
     }),

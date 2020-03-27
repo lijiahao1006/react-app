@@ -51,7 +51,7 @@ class App extends Component {
         <img
           src={'./images/ym'+ this.state.img + '.jpg'} 
         />
-        <Color />
+        {/* <Color />
         <List />
         <Ball a={this.state.a} add={()=>{
               this.setState({
@@ -65,7 +65,7 @@ class App extends Component {
               Acolor: val
             })
           }}
-        />
+        /> */}
       </div>
     );
   }
