@@ -40,7 +40,11 @@ module.exports = {
     port: 8080,
     //错误显示于页面
     overlay:true,
-    hot:true
+    hot:true,
+    // 自动打开浏览器
+    open: true,
+    // 错误和警告不出现终端内
+    quiet: true
   },
   devtool: 'inline-source-map',
   plugins: [
